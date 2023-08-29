@@ -12,6 +12,7 @@ import { HeroSectionComponent } from './components/hero-section/hero-section.com
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { RegisterComponent } from './pages/register/register.component';
     NavbarComponent,
     FooterComponent,
     RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     RouterModule,
