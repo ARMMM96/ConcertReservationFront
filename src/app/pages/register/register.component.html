@@ -1,207 +1,232 @@
-<div class="container-fluid ">
-    <div class="row form-container mt-5 mb-5  pt-1 pb-4 ">
+<section class="mt-5 mb-5">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
+                <div class="card text-black" style="border-radius: 25px;">
+                    <div class="card-body p-md-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Register</p>
 
 
-        <div class="col-md-6 col-lg-6 d-md-inline sidebar collapse mt-5 mx-5 ">
-
-            <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
-
-
-                <div class="form-group">
-                    <div class="d-flex flex-row align-items-center mb-4">
-                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                        <div class="form-outline flex-fill mb-0">
-                            <label for="firstName">First Name:</label>
-                            <input type="text" id="firstName" formControlName="firstName" class="form-control" required>
-                        </div>
-                    </div>
-
-                    <div class=" alert alert-danger  d-flex flex-row align-items-center mb-4"
-                        *ngIf="isSubmit && firstName?.invalid">
-                        <div *ngIf="firstName?.errors?.['required']" class="form-outline flex-fill mb-0">
-                            Please provide a first name.
-                        </div>
+                                <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="needs-validation"
+                                    novalidate>
 
 
-                        <div *ngIf="firstName?.errors?.['pattern']">
-                            Invalid Name name must be chracters
-                            {{firstName?.errors?.['pattern'] |json}}
-                        </div>
+                                    <div class="form-group">
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <label for="firstName">First Name:</label>
+                                                <input type="text" id="firstName" formControlName="firstName"
+                                                    class="form-control" required>
+                                            </div>
+                                        </div>
 
-                        <div *ngIf="firstName?.errors?.['minlength']">
-                            Min length is 3
-                            <br>
-                            {{firstName?.errors?.['minlength'] |json}}
-                        </div>
-                        <div *ngIf="firstName?.errors?.['maxlength']">
-                            Max length is 10
-                            <br>
-                            {{firstName?.errors?.['maxlength'] |json}}
+                                        <div class=" alert alert-danger  d-flex flex-row align-items-center mb-4"
+                                            *ngIf="isSubmit && firstName?.invalid">
+                                            <div *ngIf="firstName?.errors?.['required']"
+                                                class="form-outline flex-fill mb-0">
+                                                Please provide a first name.
+                                            </div>
+
+
+                                            <div *ngIf="firstName?.errors?.['pattern']">
+                                                Invalid Name name must be chracters
+                                                {{firstName?.errors?.['pattern'] |json}}
+                                            </div>
+
+                                            <div *ngIf="firstName?.errors?.['minlength']">
+                                                Min length is 3
+                                                <br>
+                                                {{firstName?.errors?.['minlength'] |json}}
+                                            </div>
+                                            <div *ngIf="firstName?.errors?.['maxlength']">
+                                                Max length is 10
+                                                <br>
+                                                {{firstName?.errors?.['maxlength'] |json}}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <label for="lastName">Last Name:</label>
+                                                <input type="text" id="lastName" formControlName="lastName"
+                                                    class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class=" alert alert-danger  d-flex flex-row align-items-center mb-4"
+                                            *ngIf="isSubmit && lastName?.invalid">
+
+                                            <div *ngIf="lastName?.errors?.['required']"
+                                                class="form-outline flex-fill mb-0">
+                                                Please provide a last name.
+                                            </div>
+
+                                            <div *ngIf="lastName?.errors?.['pattern']">
+                                                Invalid Name name must be chracters
+                                                {{lastName?.errors?.['pattern'] |json}}
+                                            </div>
+
+                                            <div *ngIf="lastName?.errors?.['minlength']">
+                                                Min length is 3
+                                                <br>
+                                                {{lastName?.errors?.['minlength'] |json}}
+                                            </div>
+                                            <div *ngIf="lastName?.errors?.['maxlength']">
+                                                Max length is 10
+                                                <br>
+                                                {{lastName?.errors?.['maxlength'] |json}}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <label for="email">email</label>
+                                                <input type="text" id="email" formControlName="email"
+                                                    class="form-control" required>
+                                            </div>
+                                        </div>
+
+                                        <div class=" alert alert-danger  d-flex flex-row align-items-center mb-4"
+                                            *ngIf="isSubmit && email?.invalid">
+
+                                            Please provide an email.
+
+                                            <div *ngIf="email?.errors?.['pattern']">
+                                                Invalid email
+                                                {{email?.errors?.['pattern'] |json}}
+                                            </div>
+
+                                            <div *ngIf="email?.errors?.['minlength']">
+                                                Min length is 3
+                                                <br>
+                                                {{email?.errors?.['minlength'] |json}}
+                                            </div>
+                                            <div *ngIf="email?.errors?.['maxlength']">
+                                                Max length is 10
+                                                <br>
+                                                {{email?.errors?.['maxlength'] |json}}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class=" me-3 fa-solid fa-phone fa-xl"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <label class="form-label" for="phoneNumber">Phone Number</label>
+                                                <input type="text" id="phoneNumber" class="form-control"
+                                                    formControlName="phoneNumber" />
+                                            </div>
+                                        </div>
+
+                                        <div class=" alert alert-danger  d-flex flex-row align-items-center mb-4"
+                                            *ngIf="isSubmit && phoneNumber?.invalid">
+
+                                            <div *ngIf="phoneNumber?.errors?.['required']"
+                                                class=" form-outline flex-fill mb-0">
+                                                Phone number required
+                                            </div>
+
+                                            <div *ngIf="phoneNumber?.errors?.['minlength']">
+                                                Min number is 11
+                                                <br>
+                                                {{phoneNumber?.errors?.['min'] |json}}
+                                            </div>
+
+                                            <div *ngIf="phoneNumber?.errors?.['maxlength']">
+                                                Max number is 11
+                                                <br>
+                                            </div>
+                                            <div *ngIf="phoneNumber?.errors?.['pattern']">
+                                                Invalid Phone number
+                                                <br>
+                                                {{phoneNumber?.errors?.['pattern'] |json}}
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <label class="form-label" for="password">Password</label>
+                                                <input type="{{ showPassword ? 'text' : 'password' }}" id="password"
+                                                    class="form-control" formControlName="password" />
+                                            </div>
+                                            <button type="button" class=" mt-3  mx-2 btn btn-outline-secondary"
+                                                (click)="togglePasswordVisibility()">
+                                                <i class="{{ showPassword ? 'fas fa-eye-slash' : 'fas fa-eye' }}"></i>
+                                            </button>
+                                        </div>
+
+                                        <div class=" alert alert-danger  d-flex flex-row align-items-center mb-4"
+                                            *ngIf="isSubmit && password?.invalid">
+
+                                            <div *ngIf="password?.errors?.['required']"
+                                                class=" form-outline flex-fill mb-0">
+                                                Password number required
+                                            </div>
+
+                                            <div *ngIf="password?.errors?.['minlength']">
+                                                Min number is 11
+                                                <br>
+                                                {{password?.errors?.['min'] |json}}
+                                            </div>
+
+                                            <div *ngIf="password?.errors?.['maxlength']">
+                                                Max number is 11
+                                                <br>
+                                            </div>
+                                            <div *ngIf="password?.errors?.['pattern']">
+                                                Invalid Phone number
+                                                <br>
+                                                {{password?.errors?.['pattern'] |json}}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0 ">
+                                            <label class="form-label" for="repeatedPassword">Repeat Password</label>
+                                            <input type="{{ showRepeatedPassword ? 'text' : 'password' }}"
+                                                id="repeatedPassword" class="form-control"
+                                                formControlName="repeatedPassword" />
+                                        </div>
+
+                                        <button type="button" class="mt-3 mx-2 btn btn-outline-secondary"
+                                            (click)="toggleRepeatedPasswordVisibility()">
+                                            <i class="fas {{ showRepeatedPassword ? 'fa-eye-slash' : 'fa-eye' }}"></i>
+                                        </button>
+                                    </div>
+                                    <div class="alert alert-danger" *ngIf="isSubmit && errorFlag">
+                                        <div>
+                                            <h3 class="card-header"> {{errorMsg}}</h3>
+
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
+
+                            </div>
+                            <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                                <img src="assets/register.png" class="img-fluid" alt="Sample image">
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <div class="d-flex flex-row align-items-center mb-4">
-                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                        <div class="form-outline flex-fill mb-0">
-                            <label for="lastName">Last Name:</label>
-                            <input type="text" id="lastName" formControlName="lastName" class="form-control" required>
-                        </div>
-                    </div>
-                    <div class=" alert alert-danger  d-flex flex-row align-items-center mb-4"
-                        *ngIf="isSubmit && lastName?.invalid">
-
-                        <div *ngIf="lastName?.errors?.['required']" class="form-outline flex-fill mb-0">
-                            Please provide a last name.
-                        </div>
-
-                        <div *ngIf="lastName?.errors?.['pattern']">
-                            Invalid Name name must be chracters
-                            {{lastName?.errors?.['pattern'] |json}}
-                        </div>
-
-                        <div *ngIf="lastName?.errors?.['minlength']">
-                            Min length is 3
-                            <br>
-                            {{lastName?.errors?.['minlength'] |json}}
-                        </div>
-                        <div *ngIf="lastName?.errors?.['maxlength']">
-                            Max length is 10
-                            <br>
-                            {{lastName?.errors?.['maxlength'] |json}}
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="d-flex flex-row align-items-center mb-4">
-                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                        <div class="form-outline flex-fill mb-0">
-                            <label for="email">email</label>
-                            <input type="text" id="email" formControlName="email" class="form-control" required>
-                        </div>
-                    </div>
-
-                    <div class=" alert alert-danger  d-flex flex-row align-items-center mb-4"
-                        *ngIf="isSubmit && email?.invalid">
-
-                        Please provide an email.
-
-                        <div *ngIf="email?.errors?.['pattern']">
-                            Invalid email
-                            {{email?.errors?.['pattern'] |json}}
-                        </div>
-
-                        <div *ngIf="email?.errors?.['minlength']">
-                            Min length is 3
-                            <br>
-                            {{email?.errors?.['minlength'] |json}}
-                        </div>
-                        <div *ngIf="email?.errors?.['maxlength']">
-                            Max length is 10
-                            <br>
-                            {{email?.errors?.['maxlength'] |json}}
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="d-flex flex-row align-items-center mb-4">
-                        <i class=" me-3 fa-solid fa-phone fa-xl"></i>
-                        <div class="form-outline flex-fill mb-0">
-                            <label class="form-label" for="phoneNumber">Phone Number</label>
-                            <input type="text" id="phoneNumber" class="form-control" formControlName="phoneNumber" />
-                        </div>
-                    </div>
-
-                    <div class=" alert alert-danger  d-flex flex-row align-items-center mb-4"
-                        *ngIf="isSubmit && phoneNumber?.invalid">
-
-                        <div *ngIf="phoneNumber?.errors?.['required']" class=" form-outline flex-fill mb-0">
-                            Phone number required
-                        </div>
-
-                        <div *ngIf="phoneNumber?.errors?.['minlength']">
-                            Min number is 11
-                            <br>
-                            {{phoneNumber?.errors?.['min'] |json}}
-                        </div>
-
-                        <div *ngIf="phoneNumber?.errors?.['maxlength']">
-                            Max number is 11
-                            <br>
-                        </div>
-                        <div *ngIf="phoneNumber?.errors?.['pattern']">
-                            Invalid Phone number
-                            <br>
-                            {{phoneNumber?.errors?.['pattern'] |json}}
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="form-group">
-
-                    <div class="d-flex flex-row align-items-center mb-4">
-                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                        <div class="form-outline flex-fill mb-0">
-                            <label class="form-label" for="password">Password</label>
-                            <input type="{{ showPassword ? 'text' : 'password' }}" id="password" class="form-control"
-                                formControlName="password" />
-                        </div>
-                        <button type="button" class=" mt-3  mx-2 btn btn-outline-secondary"
-                            (click)="togglePasswordVisibility()">
-                            <i class="{{ showPassword ? 'fas fa-eye-slash' : 'fas fa-eye' }}"></i>
-                        </button>
-                    </div>
-
-                    <div class=" alert alert-danger  d-flex flex-row align-items-center mb-4"
-                        *ngIf="isSubmit && password?.invalid">
-
-                        <div *ngIf="password?.errors?.['required']" class=" form-outline flex-fill mb-0">
-                            Password number required
-                        </div>
-
-                        <div *ngIf="password?.errors?.['minlength']">
-                            Min number is 11
-                            <br>
-                            {{password?.errors?.['min'] |json}}
-                        </div>
-
-                        <div *ngIf="password?.errors?.['maxlength']">
-                            Max number is 11
-                            <br>
-                        </div>
-                        <div *ngIf="password?.errors?.['pattern']">
-                            Invalid Phone number
-                            <br>
-                            {{password?.errors?.['pattern'] |json}}
-                        </div>
-                    </div>
-                </div>
-
-                <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0 ">
-                        <label class="form-label" for="repeatedPassword">Repeat Password</label>
-                        <input type="{{ showRepeatedPassword ? 'text' : 'password' }}" id="repeatedPassword"
-                            class="form-control" formControlName="repeatedPassword" />
-                    </div>
-
-                    <button type="button" class="mt-3 mx-2 btn btn-outline-secondary"
-                        (click)="toggleRepeatedPasswordVisibility()">
-                        <i class="fas {{ showRepeatedPassword ? 'fa-eye-slash' : 'fa-eye' }}"></i>
-                    </button>
-                </div>
-                <div class="alert alert-danger" *ngIf="isSubmit && errorFlag">
-                    <div>
-                        <h3 class="card-header"> {{errorMsg}}</h3>
-
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+            </div>
         </div>
     </div>
-</div>
+</section>
