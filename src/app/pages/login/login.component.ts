@@ -16,6 +16,8 @@ export class LoginComponent {
   })
 
 
+  showPassword: boolean = false;
+
   isSubmit: boolean = false
 
   errorFlag = false
@@ -52,6 +54,11 @@ export class LoginComponent {
         }
       )
     }
+  }
+
+  
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
   }
 
 }
